@@ -9,7 +9,6 @@
 10.times do
   user = User.new
   user.email = Faker::Internet.email
-  user.name = Faker::Name.name
   user.username = Faker::Internet.user_name
   user.password = Faker::Internet.password
   user.password_confirmation = user.password
