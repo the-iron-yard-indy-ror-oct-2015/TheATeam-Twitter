@@ -1,7 +1,45 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
 
 
-<p><b>Posted <%= time_ago_in_words(post.created_at) %> ago</b></p>
+<h1>Twiterchen</h1>
+
+<table class="table">
+  <thead>
+    <table class="table">
+  <thead>
+<% if @new_user %>
+<%= button_to "Sign up", new_user_path, :class => "btn btn-default btn-lg", :method => "get" %>
+<%end%>
+<tr>
+
+      <th>  </th>
+      <th>  </th>
+      <th>   </th>
+
+
+
+      <th colspan="3"></th>
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+<p><b> <% @posts.each do |post| %> ago</b></p>
 <p><%= post.message %></p>
+<% end %>
+</tr>
+  
+
+</tbody>
+</table>
+
+<br>
+
 
 <%= render :partial => "message_form" %>
 <%= render :partial => @posts %>
+
+</div>
