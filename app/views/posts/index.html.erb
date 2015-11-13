@@ -13,9 +13,7 @@
 <%end%>
 <tr>
 
-      <th>  </th>
-      <th>  </th>
-      <th>   </th>
+      <th>Fist Page  </th>
 
 
 
@@ -23,15 +21,31 @@
 
 
     </tr>
-  </thead>
+
 
   <tbody>
 
-<p><b> <% @posts.each do |post| %> ago</b></p>
+<p><b> <% @posts.each do |post| %> </b></p>
 <p><%= post.message %></p>
-<% end %>
-</tr>
-  
+<p><%= post.user %></p>
+
+<tr>
+
+
+        <td><%= "username" %></td>
+        <td><%= "post.message" %></td>
+
+
+
+
+
+
+
+      </tr>
+    <% end %>
+
+
+
 
 </tbody>
 </table>
@@ -39,7 +53,6 @@
 <br>
 
 
-<%= render :partial => "message_form" %>
-<%= render :partial => @posts %>
+<%= link_to 'New Post', new_post_path %>
 
 </div>

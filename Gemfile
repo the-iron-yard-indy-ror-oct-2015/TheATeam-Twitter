@@ -28,6 +28,7 @@ gem 'acts_as_follower'
 gem 'kaminari'
 gem 'wicked'
 gem 'faker'
+gem 'bootstrap_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
