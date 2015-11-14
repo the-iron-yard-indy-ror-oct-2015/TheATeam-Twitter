@@ -8,9 +8,18 @@
 
 10.times do
   user = User.new
+
   user.email = Faker::Internet.email
   user.username = Faker::Internet.user_name
   user.password = Faker::Internet.password
   user.password_confirmation = user.password
   user.save!
+
+  100.times do
+    post = Post.new
+    post.message = Faker::Lorem.sentences(2).join(" ")
+    post.user = user
+    post.save!
+
+  end
 end
