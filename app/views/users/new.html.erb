@@ -3,13 +3,13 @@
 <div class="container">
   <%= form_for @user do |x| %>
     <p>Username:</p>
-    <%= x.text_field :username %>
+      <%= x.text_field :username %>
     <p>Email:</p>
-    <%= x.email_field :email %>
+      <%= x.email_field :email %>
     <p>Password:</p>
-    <%= x.password_field :password %>
+      <%= x.password_field :password %>
     <p>Confirm password:</p>
-    <%= x.password_field :password_confirmation %>
+      <%= x.password_field :password_confirmation %>
     <%= x.submit "Submit" %>
   <% end %>
 </div>
