@@ -1,16 +1,12 @@
-<h1>Create an account:</h1>
+<h1>Login</h1>
 
 <div class="container">
-  <%= form_for @user do |x| %>
+  <%= form_for @user_session do |x| %>
     <p>Username:</p>
       <%= x.text_field :username %>
-    <p>Email:</p>
-      <%= x.email_field :email %>
     <p>Password:</p>
       <%= x.password_field :password %>
-    <p>Confirm password:</p>
-      <%= x.password_field :password_confirmation %>
-    <%= x.submit "Submit" %>
+    <%= x.submit "Login" %>
   <% end %>
 </div>
 <div class= "container">
