@@ -6,6 +6,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.active = true
+    @user.approved = true
+    @user.confirmed = true
     if @user.save
       flash[:notice] = "Thanks for signing up!"
       redirect_to root_path

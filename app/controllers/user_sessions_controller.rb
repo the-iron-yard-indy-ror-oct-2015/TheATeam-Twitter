@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_to root_path
     else
-      redirect_to new_user_session_path
+      render :new
     end
   end
 
