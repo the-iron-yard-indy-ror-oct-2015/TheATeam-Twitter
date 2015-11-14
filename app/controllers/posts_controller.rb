@@ -1,10 +1,7 @@
 class PostsController < ApplicationController
+  
   def index
-    @posts = Post.all(:order => "created_at DESC")
-    respon_to do |format|
-      format.html
-
-    end
+    @posts = Post.all
   end
 
   def create

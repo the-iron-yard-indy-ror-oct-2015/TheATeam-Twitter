@@ -1,6 +1,6 @@
 
 
-<p><b>Posted <%= time_ago_in_words(post.created_at) %> ago</b></p>
+<p><b>Posted <%= time_ago_in_words(@post.created_at) %> ago</b></p>
 <p><%= post.message %></p>
 
 <%= render :partial => "message_form" %>
