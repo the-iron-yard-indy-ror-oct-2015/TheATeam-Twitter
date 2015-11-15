@@ -1,22 +1,51 @@
 class PostsController < ApplicationController
 
+
+
+
+
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(10)
+
+end
+
+def show
+  @post = Post.find(params[:id])
+
+end
+
+def new
+  @post = Post.new
 end
 
   def create
     @post = Post.new(post_params)
-  respond to do |format|
+
       if @post.save
-        format.html { redirect_to posts_path}
+        format.html { redirect_to post_path}
+        redirect_to root_path
       else
         flash[:notice] = "Message failed to save"
-        format.html { redirect_to posts_path}
+        render :new
 
       end
+    end
+
+
+
+def update
+
+  end
+
+private
+
+def set_post
+      @post = Post.find(params[:id])
 
     end
 
-  end
+def post_params
+  params.require(:post).permit(:user_name, :url, :message)
+end
 
 end

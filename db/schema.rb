@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20151115005431) do
     t.integer  "follower_id"
   end
 
+  
+
   create_table "posts", force: :cascade do |t|
     t.text     "message"
     t.datetime "created_at", null: false
