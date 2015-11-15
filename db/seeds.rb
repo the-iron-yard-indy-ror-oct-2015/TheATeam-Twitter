@@ -18,6 +18,7 @@
   100.times do
     post = Post.new
     post.message = Faker::Lorem.sentences(2).join(" ")
+    post.created_at = Faker::Time.between(DateTime.now - 1, DateTime.now)
     post.user = user
     post.save!
 
