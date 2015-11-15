@@ -1,60 +1,49 @@
+
 <div class="container">
 <p id="notice"><%= notice %></p>
 
 
-
-<h1>Twiterchen</h1>
+<h1>Twitterchen</h1>
 
 <table class="table">
   <thead>
-    <table class="table">
-  <thead>
+
+
 <% if @new_user %>
 <%= button_to "Sign up", new_user_path, :class => "btn btn-default btn-lg", :method => "get" %>
 <%end%>
 <tr>
 
-      <th>Fist Page  </th>
 
 
 
       <th colspan="3"></th>
 
 
-    </tr>
-
-
-  <tbody>
-
-<p><b> <% @posts.each do |post| %> </b></p>
-<p><%= post.message %></p>
-<p><%= post.user.username %></p>
-
-<tr>
-
-
-        <td><%= "username" %></td>
-        <td><%= "post.message" %></td>
+  <p id="notice"><%= notice %></p>
 
 
 
+  <table>
+
+    <tbody>
+      <% @posts.each do |post| %>
 
 
 
+        <tr>
+          <th><%= "user" %></td>
+          <td><%= post.user.username %></td>
+          <th><%= "post.message" %></th>
+          <td><%= post.message %></td>
+          <td><%= link_to 'Show', post %></td>
 
-      </tr>
-    <% end %>
+        </tr>
 
+      <% end %>
+    </tbody>
+  </table>
 
-
-
-</tbody>
-</table>
-
-<br>
-
-
-<%= link_to 'New Post', new_post_path %>
 
 </div>
 
