@@ -9,9 +9,8 @@
   <thead>
 
 
-<% if @new_user %>
+<%= button_to "Log in", new_user_session_path, :class => "btn btn-default btn-lg", :method => "get" %>
 <%= button_to "Sign up", new_user_path, :class => "btn btn-default btn-lg", :method => "get" %>
-<%end%>
 <tr>
 
 
