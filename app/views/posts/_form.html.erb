@@ -1,7 +1,7 @@
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this link from being saved:</h2>
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
       <% @post.errors.full_messages.each do |message| %>
@@ -11,13 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :URL %><br>
-    <%= f.text_field :URL %>
+
   </div>
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :message %><br>
+    <%= f.text_field :message %>
   </div>
   <div class="actions">
     <%= f.submit %>

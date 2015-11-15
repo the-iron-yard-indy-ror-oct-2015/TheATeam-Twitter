@@ -1,6 +1,8 @@
+<%= paginate @links %>
+div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Models</h1>
+<h1>Posts</h1>
 
 <table>
   <thead>
@@ -12,12 +14,12 @@
   </thead>
 
   <tbody>
-    <% @models.each do |model| %>
+    <% post.each do |post| %>
       <tr>
-        <td><%= model.post %></td>
-        <td><%= model.message %></td>
-        <td><%= link_to 'Show', model %></td>
-        <td><%= link_to 'Edit', edit_model_path(model) %></td>
+        <td><%= post %></td>
+        <td><%= message %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -26,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Model', new_model_path %>
+<%= link_to 'New Post', new_post_path %>

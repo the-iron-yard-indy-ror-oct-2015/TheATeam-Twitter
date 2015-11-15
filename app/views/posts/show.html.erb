@@ -1,8 +1,10 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <strong>url:</strong>
-  <%= @user.url %>
+  <strong>Posts:</strong>
+  <%= link_to "username", user_path %>
 </p>
 
 <p>
@@ -10,5 +12,5 @@
   <%= @post.message %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', post_path %>
+
+<%= link_to 'Back', root_path %>
