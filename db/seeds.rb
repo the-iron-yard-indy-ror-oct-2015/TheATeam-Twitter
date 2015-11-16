@@ -13,7 +13,7 @@
   user.username = Faker::Internet.user_name
   user.password = Faker::Internet.password
 
-  user.password_confirmation = Faker::Internet.password_confirmation
+
 
 
 
@@ -25,10 +25,10 @@
 
 
     post.created_at = Faker::Time.between(6.months.ago, DateTime.now)
-    post.created_at = Faker::Time.between(DateTime.now - 1, DateTime.now)
-
-
     
+
+
+
 
     post.user = user
     post.save!
