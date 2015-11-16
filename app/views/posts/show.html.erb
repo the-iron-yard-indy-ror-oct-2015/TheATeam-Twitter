@@ -1,0 +1,16 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Posts:</strong>
+  <%= link_to "username", user_path %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @post.message %>
+</p>
+
+
+<%= link_to 'Back', root_path %>
