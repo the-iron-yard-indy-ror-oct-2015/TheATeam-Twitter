@@ -14,11 +14,11 @@
   user.password = Faker::Internet.password
   user.password_confirmation = Faker::Internet.password_confirmation
   user.save!
-
+Try 6.months.ago, DateTime.now
   100.times do
     post = Post.new
     post.message = Faker::Lorem.sentences(2).join(" ")
-    post.created_at = Faker::Time.between(DateTime.now - 1,DateTime.now)
+  
 
     post.created_at = Faker::Time.between(DateTime.now - 1, DateTime.now)
 
