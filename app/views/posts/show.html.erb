@@ -3,8 +3,13 @@
 
 
 <p>
+
+  <strong>Posts:</strong>
+    <%=link_to "#{@post.user.username}", user_path(@post.user.id) %>
+
   <strong>More posts by</strong>
   <%= link_to "#{@post.user.username}", user_path(@post.user.id) %>
+
 </p>
 
 <p>
@@ -12,6 +17,5 @@
   <%= @post.message %>
   <p>Posted on <%= @post.created_at.strftime('%b %e, %l:%M %p') %></p>
 </p>
-
 
 <%= link_to 'Back', root_path %>

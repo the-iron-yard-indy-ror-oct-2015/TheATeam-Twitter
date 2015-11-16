@@ -1,4 +1,10 @@
-<h1><%= @user.username %></h1>
+<h2><%= @user.username %></h2>
+
+  <div class "container">
+<% @user.followers.each do |x| %>
+    <%= x.username %>
+
+    <% end %>
 
 <div class="container" style="float: right; margin-right: 30px;">
   <h3>Followers</h3>
@@ -10,11 +16,31 @@
 </div>
 <br>
 <%= button_to "Follow", follow_user_path, :class => "btn btn-default btn-lg" %>
+
+
+
+<br> </br>
+    <br></br>
+
+<%= link_to "Home", root_path %>
+
+<br> </br>
+
+<br>
+<br>
+<br>
+
 <br>
 <%= link_to "Home", root_path %>
+
 <div class="container">
-  <% @user.posts.each do |x| %>
+
+<% @user.posts.each do |x| %>
     <%= x.message %>
-    <br>
+
+<br>
+
   <% end %>
+
+
 </div>
