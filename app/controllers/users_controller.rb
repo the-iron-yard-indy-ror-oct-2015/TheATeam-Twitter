@@ -21,6 +21,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def follow
+    @user = User.find(params[:id])
+    current_user.follow(@user)
+    redirect_to root_path
+  end
+
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end

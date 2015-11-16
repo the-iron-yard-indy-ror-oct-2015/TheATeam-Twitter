@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   resources :user_sessions, only: [:create, :new, :destroy]
-  resources :users
+  resources :users do
+    member do
+      get :follow
+      post :follow
+      get :unfollow
+    end
+  end
   resources :posts
-  resources :follows, only: [:create, :destroy]
   root 'posts#index'
 end
   # The priority is based upon order of creation: first created -> highest priority.
