@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :follows, :through => :follows
-
+  acts_as_follower
 
 end
