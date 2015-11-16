@@ -4,7 +4,7 @@
 
 <p>
   <strong>Posts:</strong>
-  <%= link_to "username", user_path(@post.user.id) %>
+  <%= link_to "#{@post.user.username}", user_path(@post.user.id) %>
 </p>
 
 <p>
