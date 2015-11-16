@@ -4,9 +4,6 @@
 
 <p>
 
-  <strong>Posts:</strong>
-    <%=link_to "#{@post.user.username}", user_path(@post.user.id) %>
-
   <strong>More posts by</strong>
   <%= link_to "#{@post.user.username}", user_path(@post.user.id) %>
 
