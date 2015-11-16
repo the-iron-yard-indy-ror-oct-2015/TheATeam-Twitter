@@ -32,7 +32,7 @@
 
         <tr>
           <th><%= "user" %></td>
-          <td><%= post.user.username %></td>
+          <td><%= link_to "#{post.user.username}", user_path(post.user.id) %></td>
           <th><%= "post.message" %></th>
           <td><%= post.message %></td>
           <td><%= link_to 'Show', post %></td>

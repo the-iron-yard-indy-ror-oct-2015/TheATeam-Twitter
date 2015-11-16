@@ -1,6 +1,13 @@
 <h1><%= @user.username %></h1>
 
+<div class="container">
+  <% @user.followers.each do |x| %>
+    <%= x.username %>
+  <% end %>
+</div>
+<br>
 <%= button_to "Follow", follow_user_path, :class => "btn btn-default btn-lg" %>
+<br>
 <%= link_to "Home", root_path %>
 
 <div class="container">
@@ -8,11 +15,6 @@
     <% @user.posts.each do |x| %>
       <%= x.message %>
       <br>
-    <% end %>
-  </div>
-  <div class="col-xs-5 container">
-    <% @user.followers.each do |x| %>
-      <%= x.username %>
     <% end %>
   </div>
 </div>
