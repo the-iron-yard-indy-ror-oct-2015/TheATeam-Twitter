@@ -20,7 +20,11 @@
           <% @posts.each do |post| %>
 
           <th><%= "user" %></td>
+
           <td><%= link_to "#{post.user.username}",user_path(post.user.id) %></td>
+
+          <td><%= link_to "#{post.user.username}", user_path(post.user.id) %></td>
+
           <th><%= "post.message" %></th>
           <td><%= post.message %></td>
           <td><%= link_to 'Show', post %></td>
