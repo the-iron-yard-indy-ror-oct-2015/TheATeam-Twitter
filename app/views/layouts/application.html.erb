@@ -20,6 +20,16 @@
       <%= content_tag :div, msg, class: name %>
     <% end %>
 
+  <div class="container" id="main-buttons">
+    <% if @current_user %>
+      <%= button_to "Post", new_post_path, :class => "btn btn-primary", method: :get %>
+      <%= button_to "Log out", user_session_path(@current_user), :class => "btn btn-primary", method: :delete %>
+    <% else %>
+      <%= button_to "Log in", new_user_session_path, :class => "btn btn-primary", method: :get %>
+      <%= button_to "Sign up", new_user_path, :class => "btn btn-primary", method: :get %>
+    <% end %>
+  </div>
+
 <%= yield %>
 
 </body>
