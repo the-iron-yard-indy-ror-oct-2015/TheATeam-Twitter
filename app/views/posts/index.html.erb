@@ -3,11 +3,11 @@
 </div>
 <div class="container">
   <% if @current_user %>
-    <%= button_to "Post", new_post_path, :class => "btn btn-lg" %>
-    <%= button_to "Log out", user_session_path(@current_user), :class => "btn btn-lg", :method => :delete %>
+    <%= button_to "Post", new_post_path, :class => "btn btn-lg", method: :get %>
+    <%= button_to "Log out", user_session_path(@current_user), :class => "btn btn-lg", method: :delete %>
   <% else %>
-    <%= button_to "Log in", new_user_session_path, :class => "btn btn-default btn-lg", :method => "get" %>
-    <%= button_to "Sign up", new_user_path, :class => "btn btn-default btn-lg", :method => "get" %>
+    <%= button_to "Log in", new_user_session_path, :class => "btn btn-default btn-lg", method: :get %>
+    <%= button_to "Sign up", new_user_path, :class => "btn btn-default btn-lg", method: :get %>
   <% end %>
   <table class="table">
     <th></th>
