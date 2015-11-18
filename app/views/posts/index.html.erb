@@ -1,6 +1,15 @@
 <div class="container">
   <h1>Twitterchen</h1>
 </div>
+<div class="container-fluid" style="float: right">
+  <% if @current_user %>
+    <%= button_to "Post", new_post_path, :class => "btn btn-primary", method: :get %>
+    <%= button_to "Log out", user_session_path(@current_user), :class => "btn btn-primary", method: :delete %>
+  <% else %>
+    <%= button_to "Log in", new_user_session_path, :class => "btn btn-primary", method: :get %>
+    <%= button_to "Sign up", new_user_path, :class => "btn btn-primary", method: :get %>
+  <% end %>
+</div>
 <% if @current_user %>
   <div class="container">
     <table class="table">
