@@ -16,7 +16,9 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
+    current_user_session.find(params[:id])
     current_user_session.destroy
+    flash[:notice] = "See you later!"
     redirect_to root_path
   end
 

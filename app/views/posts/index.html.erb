@@ -1,45 +1,26 @@
-
 <div class="container">
-<p id="notice"><%= notice %></p>
-
-
-<h1>Twitterchen</h1>
-
-<table class="table">
-
-
-
-<%= button_to "Log in", new_user_session_path, :class => "btn btn-default btn-lg", :method => "get" %>
-<%= button_to "Sign up", new_user_path, :class => "btn btn-default btn-lg", :method => "get" %>
-
-<th colspan="3"></th>
-
-
-      <tr>
-        <tbody>
-          <% @posts.each do |post| %>
-
-          <th><%= "user" %></td>
-
-          <td><%= link_to "#{post.user.username}",user_path(post.user.id) %></td>
-
-          <th><%= "post.message" %></th>
-          <td><%= post.message %></td>
-          <td><%= link_to 'Show', post %></td>
-
-
-
-  </tr>
-
-  <% end %>
-    </tbody>
-  </table>
-
-
+  <h1>Twitterchen</h1>
 </div>
-
+<div class="container">
+  <% if @current_user %>
+    <%= button_to "Post", new_post_path, :class => "btn btn-lg" %>
+  <% else %>
+    <%= button_to "Log in", new_user_session_path, :class => "btn btn-default btn-lg", :method => "get" %>
+    <%= button_to "Sign up", new_user_path, :class => "btn btn-default btn-lg", :method => "get" %>
+  <% end %>
+  <table class="table">
+    <th></th>
+      <tbody>
+        <% @posts.each do |post| %>
+        <tr class="table-row">
+          <td><%= link_to "#{post.user.username}",user_path(post.user.id) %> said: </td>
+          <td><%= post.message %></td>
+          <td><%= link_to "Show", post %></td>
+        </tr>
+      <% end %>
+      </tbody>
+  </table>
+</div>
 <br>
-<br>
-
 <%= paginate @posts %>
 <%= page_entries_info @posts %>
