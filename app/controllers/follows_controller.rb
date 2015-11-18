@@ -16,8 +16,8 @@ class FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = current_user.follows.find(params[:id])
-    @follow.destroy
+    @user = User.find(params[:id])
+    @current_user.stop_following(@user)
     flash[:notice] = "Unfollowed!"
     redirect_to root_path
   end
