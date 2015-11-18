@@ -1,0 +1,23 @@
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%= form_for(@post) do |x| %>
+  <div class="form-group">
+    <%= x.label "What're you up to?", :id => "new_post_label" %>
+    <%= x.text_area :message, :class => "form-control", :rows => 5 %>
+  </div>
+  <div class="form-group">
+    <%= x.submit "Save" %>
+  </div>
+
+<% end %>
