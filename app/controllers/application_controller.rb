@@ -16,5 +16,19 @@ class ApplicationController < ActionController::Base
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.user
   end
-  
+
+  def require_user
+    unless @current_user
+      flash[:danger] = "Please log in."
+      redirect_to root_path
+    end
+  end
+
+  def require_no_user
+    if @current_user
+      flash[:warning] = "Thanks for logging in!"
+      redirect_to root_path
+    end
+  end
+
 end

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :require_no_user, :only => [:new, :create]
+
   def show
     @user = User.find(params[:id])
   end
@@ -23,8 +25,13 @@ class UsersController < ApplicationController
 
   def follow
     @user = User.find(params[:id])
-    current_user.follow(@user)
-    redirect_to root_path
+    if current_user
+      current_user.follow(@user)
+      redirect_to root_path
+    else
+      flash[:notice] = "Please log in to follow other users."
+      redirect_to root_path
+    end
   end
 
   def user_params
