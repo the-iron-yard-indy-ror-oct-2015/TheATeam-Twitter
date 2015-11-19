@@ -10,23 +10,5 @@
     <%= button_to "Sign up", new_user_path, :class => "btn btn-primary", method: :get %>
   <% end %>
 </div>
-<% if @current_user == nil %>
   <%= render "shared/index" %>
-<% else %>
-<div class="container">
-  <table class="table">
-      <tbody>
-        <% @posts.timeline(@current_user).each do |post| %>
-        <tr class="table-row">
-          <td><%= link_to "#{post.user.username}",user_path(post.user.id) %> said: </td>
-          <td><%= post.message %></td>
-          <td><%= link_to "Show", post %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-<% end %>
 <br>
-<%= paginate @posts %>
-<%= page_entries_info @posts %>
