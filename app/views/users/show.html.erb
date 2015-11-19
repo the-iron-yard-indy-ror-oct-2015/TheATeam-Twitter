@@ -4,17 +4,21 @@
 
 <div class="container" style="float: right; margin-right: 30px;">
   <h3>Followers</h3>
+  <% if @user.followers != nil %>
   <ul>
     <% @user.followers.each do |x| %>
       <li><%= x.username %></li>
     <% end %>
   </ul>
+  <% end %>
 </div>
 <br>
-<% if @current_user.following?(@user) %>
-  <%= button_to "Unfollow", follow_path(@user), :class => "btn btn-primary", method: :delete %>
-<% else %>
-  <%= button_to "Follow", follow_user_path, :class => "btn btn-primary" %>
+<% if @current_user %>
+  <% if @current_user.following?(@user) %>
+    <%= button_to "Unfollow", follow_path(@user), :class => "btn btn-primary", method: :delete %>
+    <% else %>
+    <%= button_to "Follow", follow_user_path, :class => "btn btn-primary" %>
+  <% end %>
 <% end %>
 <br>
 <div class="container">
