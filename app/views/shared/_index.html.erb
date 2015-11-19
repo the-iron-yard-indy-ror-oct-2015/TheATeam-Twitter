@@ -1,0 +1,15 @@
+<div class="container">
+  <table class="table">
+    <tbody>
+      <% @posts.each do |post| %>
+      <tr class="table-row">
+        <td><%= link_to "#{post.user.username}",user_path(post.user.id) %> said: </td>
+        <td><%= post.message %></td>
+        <td><%= link_to "Show", post %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= paginate @posts %>
+<%= page_entries_info @posts %>
